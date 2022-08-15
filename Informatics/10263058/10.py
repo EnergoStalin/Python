@@ -1,0 +1,1 @@
+print(open("./10263058/10_demo.txt", encoding="utf-8").read().lower().count("всё"))
