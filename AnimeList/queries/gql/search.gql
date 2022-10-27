@@ -1,0 +1,14 @@
+query ($id: Int, $pn: Int, $search: String = "deadman wonderlan") {
+	Page(page: $pn, perPage: 10)
+	{
+		media(id: $id, search: $search) {
+			id
+			episodes
+			type
+			title
+			{
+				userPreferred
+			}
+		}
+	}
+}

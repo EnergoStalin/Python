@@ -61,10 +61,10 @@ class ShikimoriConverter:
 
     def GetAnimeInfo(self, tp: str, anime: str):
         try: #Try get anime info from shikimori
-            self.eng[tp].append(self.api.animes.GET(search=anime)[0]["name"])
+            self.eng[tp].append(self.api.animes.GET(search=anime)[0]["name"])  # type: ignore
         except HTTPError as herr:
             sleep(30)
-            self.GetAnimeInfo(anime)
+            self.GetAnimeInfo(anime)  # type: ignore
         except Exception as ex:
             self.err[tp].append(anime)
             return False

@@ -1,0 +1,21 @@
+query ($id: Int, $type: MediaType) {
+	MediaListCollection(userId: $id, type: $type)
+	{
+		lists
+		{
+			status
+			entries {
+				progress
+				id
+				media
+				{
+					id
+					title
+					{
+						userPreferred
+					}
+				}
+			}
+		}
+	}
+}
